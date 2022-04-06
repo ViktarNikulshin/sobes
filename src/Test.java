@@ -6,34 +6,38 @@ public class Test {
     public static void main(String[] args) {
         int[] arr = {3, 5, 0, 0, 1, 0, 2};
         int[] arr1 = {3, 5, 0, 0, 1, 0, 2};
-//        int x = arr.length - 1;
-//        for (int i = 0; i < x; ) {
-//            if (arr[i] == 0) {
-//                for (int j = i; j <= x - 1; j++) {
-//                    arr[j] = arr[j + 1];
-//                }
-//                arr[x] = 0;
-//                x--;
-//            } else {
-//                i++;
-//            }
-//        }
+        int x = arr.length - 1;
+        for (int i = 0; i < x; ) {
+            if (arr[i] == 0) {
+                for (int j = i; j <= x - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr[x] = 0;
+                x--;
+            } else {
+                i++;
+            }
+        }
+        System.out.println("--------Первый способ---------");
+        System.out.println("-----------------");
         for (int a : arr) {
             System.out.print(a + " ");
         }
+        System.out.println();
         System.out.println("-----------------");
 
-        changeArr(arr, 0);
+        changeArr(arr1, 0);
+        System.out.println("------Второй способ (не докрутил через рекурсию) -----------");
         System.out.println("-----------------");
-        for (int a : arr) {
+        for (int a : arr1) {
             System.out.print(a + " ");
         }
+        System.out.println();
+        System.out.println("-----------------");
+        System.out.println("----Список users из файла-------------");
         System.out.println("-----------------");
         printCollectionUsers();
 
-        // -------//-----------
-        // Второй способ
-        // int[] arr = {3, 5, 0, 0, 1, 0, 2};
     }
 
     private static void changeArr(int[] arr, int i) {
